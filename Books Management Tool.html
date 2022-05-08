@@ -8,91 +8,8 @@
     <title>Document</title>
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <style>
-        #root {
-            margin: 0 auto;
-            width: 800px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .table {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            border-top: 1px solid lightgrey;
-            border-left: 1px solid lightgrey;
-        }
-
-        .line {
-            display: flex;
-        }
-
-        .line:nth-child(1) {
-            background-color: bisque;
-            font-weight: bolder;
-            font-size: larger;
-        }
-
-        .table p {
-            margin: 0;
-            width: 200px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            box-sizing: border-box;
-            border-right: 1px solid lightgrey;
-            border-bottom: 1px solid lightgrey;
-        }
-
-        .line :nth-child(1),
-        .line :nth-child(4) {
-            width: 150px !important;
-        }
-
-        .table span {
-            color: #337AB7;
-            cursor: pointer;
-        }
-
-        #alert {
-            width: 400px;
-            height: 100px;
-            border: 1px solid black;
-            border-radius: 30px;
-            background-color: white;
-            text-align: center;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        #alert input {
-            width: 250px;
-            height: 25px;
-            border-radius: 10px;
-            outline: none;
-            font-size: 20px;
-        }
-
-        #alert button {
-            width: 100px;
-            height: 30px;
-            background-color: lightblue;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 0 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    
 </head>
 
 <body>
@@ -134,76 +51,9 @@
             </div>
         </div>
 
-
-
     </div>
 
-
-    <script>
-        new Vue({
-            el: "#root",
-            data: {
-                list: [
-                    {
-                        id: 1,
-                        name: '利己的遺伝子',
-                        date: 198030224000
-                    }, {
-                        id: 2,
-                        name: '嫌われる勇気',
-                        date: 1386828313000
-                    }, {
-                        id: 3,
-                        name: 'Hillbilly Elegy',
-                        date: 1467043200000
-                    }, {
-                        id: 4,
-                        name: 'The Molecule of More',
-                        date: 1534194806000
-                    }
-                ],
-
-                totalNum: "",
-                alertShow: false,
-                inputName: "",
-                currentClickIndex: "",
-
-                newId: "",
-                newName: "",
-                newDate: "",
-            },
-            methods: {
-                changeName(item, index) {
-                    this.alertShow = true
-                    this.inputName = item.name
-                    this.currentClickIndex = index
-                },
-                cancelClick() {
-                    this.alertShow = false
-                },
-                sureClick() {
-                    this.alertShow = false
-                    this.list[this.currentClickIndex].name = this.inputName
-                },
-
-                deleteBook(item, index) {
-                    this.currentClickIndex = index
-                    this.list.splice(this.currentClickIndex, 1)
-                },
-                addBook() {
-                    this.newDate = new Date().toLocaleString()
-                    this.list.push({ id: this.newId, name: this.newName, date: this.newDate })
-                }
-            },
-            filters: {
-                dateFormate(data) {
-                    return new Date(data).toLocaleString()
-                }
-            }
-
-        })
-
-    </script>
+    <script src="index.js"></script>
 
 </body>
 
